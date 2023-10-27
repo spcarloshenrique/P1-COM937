@@ -38,6 +38,8 @@ public class Player : MonoBehaviour
         _playerRb.velocity = new Vector2(mov.x * playerSpeed, _playerRb.velocity.y);
 
         bool isRunning = Mathf.Abs(_playerRb.velocity.x) > Mathf.Epsilon;
+        
+        _playerAnimator.SetBool(Constants.IS_RUNNING, isRunning);
 
         if (isRunning)
             FlipSprite();
@@ -66,6 +68,7 @@ public class Player : MonoBehaviour
             }
             else if (canDoubleJump)
             {
+                _playerAnimator.SetTrigger("playerJump");
                 _playerRb.velocity = new Vector2(_playerRb.velocity.x * 1.1f, playerJump);
                 canDoubleJump = false;
             }

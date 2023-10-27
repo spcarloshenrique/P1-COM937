@@ -50,3 +50,6 @@ TagManager:
   - name: Player
     uniqueID: 3240097667
     locked: 0
+  - name: Moeda
+    uniqueID: 520048271
+    locked: 0
